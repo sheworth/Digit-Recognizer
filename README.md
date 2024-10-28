@@ -1,9 +1,9 @@
 # Digit-Recognizer
-Project Overview:
+# Project Overview:
 
  This project leverages the MNIST dataset to develop machine learning models for recognizing handwritten digits. We explore two approaches: a fully connected neural network (FNN) and a Convolutional Neural Network (CNN), comparing their performance in terms of accuracy and loss metrics. The models are trained, evaluated, and validated on a standardized test set. Finally, we use a confusion matrix to assess model predictions across all classes.
  
- Table of Contents
+ # Table of Contents
  
 Project Overview
 
@@ -21,7 +21,7 @@ Conclusion
 
 License
 
-Required libraries:
+# Required libraries:
 
 numpy
 
@@ -35,7 +35,7 @@ tensorflow
 
 scikit-learn
 
-Data Overview
+# Data Overview
 
 We use the MNIST dataset, which contains 60,000 training images and 10,000 test images of handwritten digits. Each image is represented as a 28x28 grayscale pixel array.
 
@@ -48,9 +48,9 @@ print(f"Y_test shape: {Y_test.shape}")    # (10000,)
 Feature: Grayscale pixel values ranging from 0 to 255.
 Target: Digit labels (0-9).
 
-Exploratory Data Analysis
+# Exploratory Data Analysis
 
-Visualizing Sample Images
+# Visualizing Sample Images
 
 import matplotlib.pyplot as plt  
 
@@ -60,7 +60,7 @@ plt.title(f"Label: {Y_train[700]}")
 
 plt.show()  
 
-Displaying 10 Samples per Class
+# Displaying 10 Samples per Class
 
 class_images = {i: [] for i in range(10)}  
 
@@ -84,7 +84,7 @@ plt.show()
 
 Modeling
 
-1. Fully Connected Neural Network (FNN)
+1. # Fully Connected Neural Network (FNN)
    
 from tensorflow import keras  
 
@@ -102,7 +102,7 @@ model.compile(optimizer='adam',
 
 model.fit(X_train, Y_train, epochs=10)  
 
-2. Convolutional Neural Network (CNN)
+2. # Convolutional Neural Network (CNN)
    
 model = keras.Sequential([  
     keras.layers.Input(shape=(28, 28, 1)),  
@@ -136,7 +136,7 @@ Sample Output:
 0      Loss  0.057234  
 1  Accuracy  0.986600  
 
-Confusion Matrix
+# Confusion Matrix
 
 import numpy as np  
 
@@ -156,7 +156,7 @@ plt.xlabel('Predicted')
 plt.ylabel('Actual')  
 plt.show()  
 
-Future Work
+# Future Work
 
 Hyperparameter Tuning: Using tools like KerasTuner to optimize learning rates, batch size, and architecture depth.
 
@@ -166,7 +166,7 @@ Deploying the Model: Deploy the trained model using Flask, FastAPI, or Streamlit
 
 Model Interpretability: Integrate SHAP or LIME to interpret predictions.
 
-Conclusion
+# Conclusion
 
 This project demonstrates two models for digit recognition using the MNIST dataset. While the fully connected network performs adequately, the CNN model achieves a higher accuracy due to its ability to capture spatial dependencies in the image data. The CNN achieved a test accuracy of 98.66% and shows potential for further improvement with techniques like hyperparameter tuning and data augmentation.
 
